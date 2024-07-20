@@ -1,0 +1,4 @@
+{
+    "ENVIROMENT_NAME": "PROD",
+    "BASE_URL": "https://rickandmortyapi.com/api"
+}

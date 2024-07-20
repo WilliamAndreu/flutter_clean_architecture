@@ -1,0 +1,16 @@
+{
+    "characterDetailPage": {
+        "characterCharacterDetail": "Character detail",
+        "characterAlive": "Alive",
+        "characterDead": "Dead",
+        "characterSpecies": "Specie",
+        "characterType": "Type",
+        "characterOrigin": "Origin",
+        "characterLastLocation": "Last location",
+        "characterGender": "Gender",
+        "characterEpisodes": "Episode"
+    }
+   
+    
+ 
+}
