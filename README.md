@@ -43,7 +43,7 @@ Install dependencies
 
 ## Generación automática 📌
 
-### Generador de páginas bloc
+### Generador de páginas bloc (Alpha)
 
  Para poder generar una página junto con su gestor de estados (bloc) podemos usar el script incluido en este repositorio:
 
@@ -90,7 +90,7 @@ Aun esta por determinar la forma de despliegue que se usara en este proyecto.
 * [Android Studio](https://developer.android.com/studio) - IDE de desarrollo
 * [xCode](https://apps.apple.com/es/app/xcode/id497799835?mt=12) - IDE de desarrollo
 
-## Autores ✒️
+## Contribuidores ✒️
 
 * **Pablo Suárez**
 * **Neyen Sessarego**
@@ -98,6 +98,6 @@ Aun esta por determinar la forma de despliegue que se usara en este proyecto.
 * **William Andres Aveiga**
 
 ---
-⌨️ con ❤️ por el equipo de Flutter 😊
+⌨️ con ❤️ para la comuunidad de Flutter 😊
 
 [Flutter logo]: https://raw.githubusercontent.com/flutter/website/master/src/_assets/image/flutter-lockup-bg.jpg
