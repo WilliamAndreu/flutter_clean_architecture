@@ -1,7 +1,7 @@
 # ![Flutter logo][]
 
 ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white) ![](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white) ![](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-# Rudo Flutter Clean Architecture
+# Flutter Clean Architecture
 
 Arquitectura cuya finalidad principal es ocultar los detalles de implementación a la lógica de dominio de la aplicación.
 De esta manera mantenemos aislada la lógica, consiguiendo tener un código mucho más mantenible y escalable en el tiempo.
