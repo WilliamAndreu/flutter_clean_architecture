@@ -96,6 +96,7 @@ Aun esta por determinar la forma de despliegue que se usara en este proyecto.
 * **Neyen Sessarego** - *Flutter Developer* - [neyen@rudo.es](neyen@rudo.es)
 * **Dimitar Emilov** - *Flutter Developer* - [dimitar@rudo.es](dimitar@rudo.es)
 * **William Andres Aveiga** - *Flutter Developer* - [william@rudo.es](william@rudo.es)
+* **David Castillo Prieto** - *Flutter Developer* - [davidcastillo@rudo.es](davidcastillo@rudo.es)
 
 ---
 ⌨️ con ❤️ por el equipo de Flutter 😊
