@@ -1,7 +1,7 @@
 # ![Flutter logo][]
 
 ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white) ![](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white) ![](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-# Flutter Clean Architecture
+# Rudo Flutter Clean Architecture
 
 Arquitectura cuya finalidad principal es ocultar los detalles de implementación a la lógica de dominio de la aplicación.
 De esta manera mantenemos aislada la lógica, consiguiendo tener un código mucho más mantenible y escalable en el tiempo.
@@ -14,7 +14,7 @@ De esta manera mantenemos aislada la lógica, consiguiendo tener un código much
 
 | Herramienta |  Versión                |
 | :-------- |  :------------------------- |
-| `Flutter SDK` |**3.22.3** |
+| `Flutter SDK` |**3.16.9** |
 | `Android Studio` | **2023.1** |
 | `Android Gradle Version` | **7.5** |
 | `Android Gradle Tools Version` | **7.3.0** |
@@ -43,7 +43,7 @@ Install dependencies
 
 ## Generación automática 📌
 
-### Generador de páginas bloc (Alpha)
+### Generador de páginas bloc
 
  Para poder generar una página junto con su gestor de estados (bloc) podemos usar el script incluido en este repositorio:
 
@@ -90,14 +90,14 @@ Aun esta por determinar la forma de despliegue que se usara en este proyecto.
 * [Android Studio](https://developer.android.com/studio) - IDE de desarrollo
 * [xCode](https://apps.apple.com/es/app/xcode/id497799835?mt=12) - IDE de desarrollo
 
-## Contribuidores ✒️
+## Autores ✒️
 
-* **Pablo Suárez**
-* **Neyen Sessarego**
-* **Dimitar Emilov**
-* **William Andres Aveiga**
+* **Pablo Suárez** - *Flutter Developer* - [pablosuarez@rudo.es](pablosuarez@rudo.es)
+* **Neyen Sessarego** - *Flutter Developer* - [neyen@rudo.es](neyen@rudo.es)
+* **Dimitar Emilov** - *Flutter Developer* - [dimitar@rudo.es](dimitar@rudo.es)
+* **William Andres Aveiga** - *Flutter Developer* - [william@rudo.es](william@rudo.es)
 
 ---
-⌨️ con ❤️ para la comuunidad de Flutter 😊
+⌨️ con ❤️ por el equipo de Flutter 😊
 
 [Flutter logo]: https://raw.githubusercontent.com/flutter/website/master/src/_assets/image/flutter-lockup-bg.jpg

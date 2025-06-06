@@ -8,18 +8,18 @@ import 'package:flutter_moshimoshi/interceptor/AuthInterceptor.dart';
 import 'package:flutter_moshimoshi/storage/shared_preferences/shared_preferences_storage.dart';
 import 'package:flutter_moshimoshi/storage/storage_interface.dart';
 import 'package:rickmorty/core/interceptors/dio_interceptor.dart';
-import 'package:rickmorty/layers/presentation/features/list_page/character_page.dart';
+import 'package:rickmorty/layers/presentation/features/characters_list/characters_list_page.dart';
 
 class Endpoints {
   static final Endpoint loginEndpoint = Endpoint(
     url: '/auth/token',
-    headers: {"Content-Type": "application/json"},
+    headers: {'Content-Type': 'application/json'},
     method: Method.post,
   );
 
   static final Endpoint refreshEndpoint = Endpoint(
     url: '/auth/token',
-    headers: {"Content-Type": "application/json"},
+    headers: {'Content-Type': 'application/json'},
     method: Method.post,
   );
 }
@@ -49,7 +49,7 @@ class MoshiWrapper {
       loginEndpoint: Endpoints.loginEndpoint,
       refreshEndpoint: Endpoints.refreshEndpoint,
       context: context,
-      loginPage: const CharacterView(),
+      loginPage: const CharactersListView(),
     );
   }
 
@@ -59,13 +59,15 @@ class MoshiWrapper {
     AuthInterceptor authInterceptor,
   ) {
     final moshi = MoshiMoshi(
-        authenticator: authenticator,
-        storage: tokenStore,
-        interceptors: [
-          MoshiInterceptor(
-              type: InterceptorType.nonAuthenticated,
-              interceptor: CustomInterceptor())
-        ]);
+      authenticator: authenticator,
+      storage: tokenStore,
+      interceptors: [
+        MoshiInterceptor(
+          type: InterceptorType.nonAuthenticated,
+          interceptor: CustomInterceptor(),
+        ),
+      ],
+    );
     moshi.call.interceptors.add(CustomInterceptor());
     return moshi;
   }

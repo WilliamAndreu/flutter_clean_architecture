@@ -1,11 +1,19 @@
+import 'package:injectable/injectable.dart';
 import 'package:rickmorty/layers/data/datasource/characters/remote/dto/character_dto.dart';
 import 'package:rickmorty/layers/data/repositories/characters/mappers/location_mapper_dto.dart';
 import 'package:rickmorty/layers/domain/entities/characters/character_entity.dart';
 
 import '../../../datasource/characters/local/dbo/character_dbo.dart';
 
+@Injectable()
 class CharacterMapperDTO {
-  static CharacterDTO toDTO(CharacterEntity entity) {
+  final LocationMapperDTO _locationMapperDTO;
+
+  CharacterMapperDTO({
+    required LocationMapperDTO locationMapperDTO,
+  }) : _locationMapperDTO = locationMapperDTO;
+
+  CharacterDTO toDTO(CharacterEntity entity) {
     return CharacterDTO(
       id: entity.id,
       name: entity.name,
@@ -13,8 +21,8 @@ class CharacterMapperDTO {
       species: entity.species,
       type: entity.type,
       gender: entity.gender,
-      origin: entity.origin != null ? LocationMapperDTO.toDTO(entity.origin!) : null,
-      location: entity.location != null ? LocationMapperDTO.toDTO(entity.location!) : null,
+      origin: entity.origin != null ? _locationMapperDTO.toDTO(entity.origin!) : null,
+      location: entity.location != null ? _locationMapperDTO.toDTO(entity.location!) : null,
       image: entity.image,
       episode: entity.episode,
       url: entity.url,
@@ -22,8 +30,7 @@ class CharacterMapperDTO {
     );
   }
 
-
-    static CharacterDBO toDBO(CharacterDTO dto) {
+  CharacterDBO toDBO(CharacterDTO dto) {
     return CharacterDBO(
       id: dto.id,
       name: dto.name,
@@ -31,8 +38,8 @@ class CharacterMapperDTO {
       species: dto.species,
       type: dto.type,
       gender: dto.gender,
-      origin: dto.origin != null ? LocationMapperDTO.toDBO(dto.origin!) : null,
-      location: dto.location != null ? LocationMapperDTO.toDBO(dto.location!) : null,
+      origin: dto.origin != null ? _locationMapperDTO.toDBO(dto.origin!) : null,
+      location: dto.location != null ? _locationMapperDTO.toDBO(dto.location!) : null,
       image: dto.image,
       episode: dto.episode,
       url: dto.url,
@@ -40,7 +47,7 @@ class CharacterMapperDTO {
     );
   }
 
-  static CharacterEntity toEntity(CharacterDTO dto) {
+  CharacterEntity toEntity(CharacterDTO dto) {
     return CharacterEntity(
       id: dto.id,
       name: dto.name,
@@ -48,8 +55,8 @@ class CharacterMapperDTO {
       species: dto.species,
       type: dto.type,
       gender: dto.gender,
-      origin: dto.origin != null ? LocationMapperDTO.toDTO(dto.origin!) : null,
-      location: dto.location != null ? LocationMapperDTO.toDTO(dto.location!) : null,
+      origin: dto.origin != null ? _locationMapperDTO.toDTO(dto.origin!) : null,
+      location: dto.location != null ? _locationMapperDTO.toDTO(dto.location!) : null,
       image: dto.image,
       episode: dto.episode,
       url: dto.url,

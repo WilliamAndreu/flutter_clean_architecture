@@ -1,4 +1,4 @@
-package com.example.flutter_architecture
+package com.example.rickmorty
 
 import io.flutter.embedding.android.FlutterActivity
 

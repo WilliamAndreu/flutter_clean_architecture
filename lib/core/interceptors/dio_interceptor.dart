@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:dio/dio.dart';
-import 'package:mirai_trace_logger/mirai_logger.dart';
-import 'package:rickmorty/core/utils/mirai_wrapper.dart';
+import 'package:hybrid_logger/hybrid_logger.dart';
+import 'package:rickmorty/core/utils/hybrid_logger_wrapper.dart';
 
 class CustomInterceptor extends Interceptor {
   final _requestQueue = <Future<dynamic>>[];
@@ -11,7 +11,7 @@ class CustomInterceptor extends Interceptor {
     RequestOptions options,
     RequestInterceptorHandler handler,
   ) async {
-    MiraiWrapper().logger.httpRequest(MiraiHttpRequest(path: options.path, method: options.method));
+    HybridLoggerWrapper().logger.httpRequest(HybridHttpRequest(path: options.path, method: options.method));
 
     await Future.wait(_requestQueue);
     _requestQueue.add(_handleRequest(options, handler));
@@ -57,15 +57,15 @@ class CustomInterceptor extends Interceptor {
     Response<dynamic> response,
     ResponseInterceptorHandler handler,
   ) {
-    MiraiWrapper().logger.httpResponse(MiraiHttpResponse(statusCode: response.statusCode.toString()));
+    HybridLoggerWrapper().logger.httpResponse(HybridHttpResponse(statusCode: response.statusCode.toString()));
 
     handler.next(response);
   }
 
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) {
-    MiraiWrapper().logger.httpError(
-          MiraiHttpError(
+    HybridLoggerWrapper().logger.httpError(
+          HybridHttpError(
             path: err.response!.requestOptions.path.toString(),
             statusCode: err.response!.requestOptions.queryParameters.toString(),
             statusMessage: err.response?.statusMessage.toString(),

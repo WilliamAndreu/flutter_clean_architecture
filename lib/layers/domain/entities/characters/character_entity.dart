@@ -1,8 +1,7 @@
-import 'package:equatable/equatable.dart';
 import 'package:rickmorty/core/assets/translations/internationalize.dart';
 import 'package:rickmorty/layers/domain/entities/characters/location_entity.dart';
 
-class CharacterEntity with EquatableMixin {
+class CharacterEntity {
   CharacterEntity({
     this.id,
     this.name,
@@ -30,22 +29,6 @@ class CharacterEntity with EquatableMixin {
   final List<String>? episode;
   final String? url;
   final DateTime? created;
-
-  @override
-  List<Object?> get props => [
-        id,
-        name,
-        status,
-        species,
-        type,
-        gender,
-        origin,
-        location,
-        image,
-        episode,
-        url,
-        created,
-      ];
 
   bool get isAlive => status == Internationalize.characterAlive;
 }

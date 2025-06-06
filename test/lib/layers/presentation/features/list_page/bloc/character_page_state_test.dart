@@ -1,5 +1,5 @@
 import 'package:rickmorty/layers/domain/entities/characters/character_entity.dart';
-import 'package:rickmorty/layers/presentation/features/list_page/bloc/character_page_bloc.dart';
+import 'package:rickmorty/layers/presentation/features/characters_list/bloc/characters_list_bloc.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -45,13 +45,14 @@ void main() {
 
     test('props returns a list of the object properties', () {
       final state = CharacterPageState(
-          status: CharacterPageStatus.loading,
-          characters: [Character(id: 1, name: 'John')],
-          cacheCharacters: [Character(id: 1, name: 'John')],
-          hasReachedEnd: true,
-          isFilteredList: false,
-          currentPage: 2,
-          searchText: '',);
+        status: CharacterPageStatus.loading,
+        characters: [Character(id: 1, name: 'John')],
+        cacheCharacters: [Character(id: 1, name: 'John')],
+        hasReachedEnd: true,
+        isFilteredList: false,
+        currentPage: 2,
+        searchText: '',
+      );
 
       final props = state.props;
 

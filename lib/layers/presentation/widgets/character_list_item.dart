@@ -39,7 +39,7 @@ class CharacterListItem extends StatelessWidget {
 }
 
 class _ItemDescription extends StatelessWidget {
-  const _ItemDescription({super.key, required this.item});
+  const _ItemDescription({required this.item});
 
   final CharacterEntity item;
 
@@ -52,7 +52,7 @@ class _ItemDescription extends StatelessWidget {
             topRight: Radius.circular(15),
             bottomRight: Radius.circular(15),
           ),
-          color: Theme.of(context).colorScheme.surfaceVariant,
+          color: Theme.of(context).colorScheme.surfaceContainerHighest,
         ),
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -86,7 +86,7 @@ class _ItemDescription extends StatelessWidget {
 }
 
 class _ItemPhoto extends StatelessWidget {
-  const _ItemPhoto({super.key, required this.item});
+  const _ItemPhoto({required this.item});
 
   final CharacterEntity item;
 

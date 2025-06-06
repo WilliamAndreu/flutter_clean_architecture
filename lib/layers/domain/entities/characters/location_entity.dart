@@ -1,6 +1,4 @@
-import 'package:equatable/equatable.dart';
-
-class LocationEntity with EquatableMixin {
+class LocationEntity {
   LocationEntity({
     this.name,
     this.url,
@@ -8,10 +6,4 @@ class LocationEntity with EquatableMixin {
 
   final String? name;
   final String? url;
-
-  @override
-  List<Object?> get props => [
-        name,
-        url,
-      ];
 }

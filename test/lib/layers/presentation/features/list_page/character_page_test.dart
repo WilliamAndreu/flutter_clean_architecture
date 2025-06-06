@@ -4,25 +4,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:rickmorty/layers/presentation/widgets/character_list_item.dart';
-import 'package:rickmorty/layers/presentation/features/list_page/bloc/character_page_bloc.dart';
-import 'package:rickmorty/layers/presentation/features/list_page/character_page.dart';
+import 'package:rickmorty/layers/presentation/features/characters_list/bloc/characters_list_bloc.dart';
+import 'package:rickmorty/layers/presentation/features/characters_list/characters_list_page.dart';
 
 import '../../../../../mocks/character_mocks.dart';
 import '../../helper/pump_app.dart';
 
-class CharacterBlocMock extends MockBloc<CharacterPageEvent, CharacterPageState>
-    implements CharacterPageBloc {}
-  
+class CharacterBlocMock extends MockBloc<CharactersListEvent, CharacterPageState> implements CharactersListBloc {}
 
 void main() {
   group('CharacterPage', () {
     late GetAllCharactersMock getAllCharactersMock;
 
-    late CharacterPageBloc blocMock;
+    late CharactersListBloc blocMock;
 
     setUp(() {
       getAllCharactersMock = GetAllCharactersMock();
-  
+
       blocMock = CharacterBlocMock();
 
       when(() => getAllCharactersMock.call(page: any(named: 'page')))
@@ -32,13 +30,13 @@ void main() {
     testWidgets('renders CharacterView', (tester) async {
       try {
         await tester.pumpApp(
-          const CharacterPage(),
+          const CharactersListPage(),
           getAllCharacters: getAllCharactersMock,
         );
         await tester.pumpAndSettle();
       } catch (e) {}
 
-      expectLater(find.byType(CharacterView), findsOneWidget);
+      expectLater(find.byType(CharactersListView), findsOneWidget);
     });
 
     testWidgets('renders a grid of Characters widgets', (tester) async {
@@ -54,7 +52,7 @@ void main() {
       await tester.pumpApp(
         BlocProvider.value(
           value: blocMock,
-          child: const CharacterView(),
+          child: const CharactersListView(),
         ),
       );
 

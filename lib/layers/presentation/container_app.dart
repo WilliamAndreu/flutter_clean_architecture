@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rickmorty/core/config/moshi_wrapper.dart';
 import 'package:rickmorty/core/utils/custom_bloc_observer.dart';
 import 'package:rickmorty/core/utils/navigator_util.dart';
-import 'package:rickmorty/layers/presentation/features/list_page/character_page.dart';
+import 'package:rickmorty/layers/presentation/features/characters_list/characters_list_page.dart';
 import 'package:rickmorty/core/theme/base_theme.dart';
 
 class ContainerApp extends StatefulWidget {
@@ -59,7 +59,7 @@ class _ContainerAppState extends State<ContainerApp> {
                 ),
               ],
             ),
-            body: const CharacterPage().animate().fadeIn(delay: 1.2.seconds, duration: .7.seconds),
+            body: const CharactersListPage().animate().fadeIn(delay: 1.2.seconds, duration: .7.seconds),
           );
         },
       ),
